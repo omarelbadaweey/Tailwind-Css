@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+/* Loading */
+.loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: #000b1c;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h3{
+        font-family: sans-serif;
+        position: relative;
+        color: white;
+        font-size: 60px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+        &::before{
+            content: "loading...";
+            position: absolute;
+            color: #c5b400;
+            top: 0;
+            left: 0;
+            border-right: 5px solid #c5b400;
+            animation: load 3s linear infinite;
+            overflow: hidden;
+        }
+    }
+}
+@keyframes load {
+    0%{width: 0%;}
+    50%{width: 100%;}
+    100%{width: 0%;}
+}
+
+/* scroll bar */
+.scroll-bar{
+    scrollbar-color: rgb(0, 23, 48) white ;
+}
+
+/* NavBar */
+.IconNav{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    &:hover span:nth-child(2){
+        width: 50px;
+    }
+    span{
+        display: block;
+        width: 50px;
+        height: 5px;
+        background-color: darkcyan;
+        margin-top: 5px;
+        transition: all .5s;
+        &:nth-child(2){
+            width: 25px;
+            margin-left: auto;
+            
+        }
+    }
+}
+.closeIconNav{
+   
+    span:nth-child(1){
+        transform: rotate(50deg) translateY(13px);
+    }
+    span:nth-child(2){
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    span:nth-child(3){
+        transform: rotate(-50deg) translateY(-18px);
+    }
+    span{
+        transition: all .7s linear;
+        background-color: red;
+        transform-origin: center 0%;
+         width: 40px;
+    }
+}
+/* bg-main section */
+.bg-main{
+    background: url(../img/main.jpg) no-repeat 0% /cover;
+}
+
+/* animate-fadeIn Main */
+.animate-fadeIn {
+    animation: fadeIn 1s 4s ease-out forwards;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        scale: 0;
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/* animate-fadeUp Main */
+.animate-fadeUp {
+    animation: fadeInUp 1s 4.8s ease-out forwards;
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* animate-transLeft Main */
+.animate-transLeft {
+    animation: transLeft 1s 4.4s ease-out forwards;
+}
+@keyframes transLeft {
+    0% {
+        opacity: 0;
+        transform: translatex(400px);
+    }
+    100% {
+        opacity: 1;
+        transform: translatex(-440px);
+    }
+}
+
+/* bg design cards */
+.designCard-1{
+    background: url(../img/card-4.jpeg) center / cover no-repeat;
+}
+.designCard-2{
+    background: url(../img/card-5.png) center / cover no-repeat;
+}
+.designCard-3{
+    background: url(../img/card-6.webp) center / cover no-repeat;
+}
+.mask{
+    mask: url(../img/mask.png) center / 100%  no-repeat;
+    transition: all 1s;
+    &:hover{
+        mask-size: 350%;
+    }
+}
+
+
